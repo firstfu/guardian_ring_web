@@ -15,19 +15,14 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
-  // 處理連結點擊
-  const handleLinkClick = (linkType: 'privacy' | 'contact') => {
-    if (linkType === 'privacy') {
-      // 之後可以導向隱私權政策頁面
-      console.log('Privacy policy clicked');
-    } else if (linkType === 'contact') {
-      // 之後可以導向聯繫頁面或開啟郵件
-      console.log('Contact us clicked');
-    }
+  // 處理聯繫我們點擊
+  const handleContactClick = () => {
+    window.location.href = 'mailto:support@guardianring.app';
   };
 
   return (
@@ -58,15 +53,22 @@ export default function Footer() {
 
           {/* 連結列表 */}
           <div className="flex flex-col sm:flex-row gap-6 text-center md:text-right">
-            <button
-              onClick={() => handleLinkClick('privacy')}
+            <Link
+              href="/privacy"
               className="text-gray-400 hover:text-white transition-colors duration-300 text-sm"
             >
               隱私權政策
-            </button>
+            </Link>
+            
+            <Link
+              href="/terms"
+              className="text-gray-400 hover:text-white transition-colors duration-300 text-sm"
+            >
+              使用條款
+            </Link>
             
             <button
-              onClick={() => handleLinkClick('contact')}
+              onClick={handleContactClick}
               className="text-gray-400 hover:text-white transition-colors duration-300 text-sm"
             >
               聯繫我們
