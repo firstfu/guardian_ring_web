@@ -4,9 +4,28 @@
  * 包含主標題、副標題和主要 CTA 按鈕
  */
 
+'use client';
+
 import React from 'react';
 
 export default function HeroSection() {
+  // 處理下載按鈕點擊
+  const handleDownloadClick = () => {
+    console.log('Hero download button clicked');
+    // 滾動到最終 CTA 區塊
+    document.querySelector('[data-section="final-cta"]')?.scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  };
+
+  // 處理觀看示範按鈕點擊
+  const handleDemoClick = () => {
+    console.log('Demo button clicked');
+    // 滾動到功能介紹區塊
+    document.querySelector('[data-section="features"]')?.scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  };
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-blue-900">
       {/* 背景漸層效果 */}
@@ -27,11 +46,17 @@ export default function HeroSection() {
         
         {/* CTA 按鈕群 */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+          <button 
+            onClick={handleDownloadClick}
+            className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-full text-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+          >
             免費下載，取回你的主導權
           </button>
           
-          <button className="text-blue-400 hover:text-blue-300 font-medium py-4 px-8 rounded-full text-lg transition-all duration-300 border border-blue-400 hover:border-blue-300">
+          <button 
+            onClick={handleDemoClick}
+            className="text-blue-400 hover:text-blue-300 font-medium py-4 px-8 rounded-full text-lg transition-all duration-300 border border-blue-400 hover:border-blue-300"
+          >
             看看它是如何運作的 ↓
           </button>
         </div>

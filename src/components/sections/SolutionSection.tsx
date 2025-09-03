@@ -91,7 +91,7 @@ export default function SolutionSection() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-b from-gray-900 to-black">
+    <section data-section="features" className="py-20 bg-gradient-to-b from-gray-900 to-black">
       <div className="max-w-7xl mx-auto px-4">
         {/* 區塊標題 */}
         <div className="text-center mb-20">
