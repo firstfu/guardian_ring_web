@@ -20,8 +20,6 @@ interface FeatureProps {
   subtitle: string;
   description: string;
   icon: React.ReactNode;
-  imagePlaceholder: string;
-  reversed?: boolean;
 }
 
 // 功能特色組件
@@ -29,48 +27,29 @@ const FeatureItem: React.FC<FeatureProps> = ({
   title, 
   subtitle, 
   description, 
-  icon, 
-  imagePlaceholder, 
-  reversed = false 
+  icon
 }) => {
   return (
-    <div className={`flex flex-col lg:flex-row items-center gap-12 mb-20 ${
-      reversed ? 'lg:flex-row-reverse' : ''
-    }`}>
-      {/* 文字內容 */}
-      <div className="flex-1 space-y-6">
-        {/* 圖示和標題 */}
-        <div className="flex items-center gap-4">
-          <div className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-500/20 text-blue-400">
-            {icon}
-          </div>
-          <div>
-            <h3 className="text-2xl md:text-3xl font-bold text-white">
-              {title}
-            </h3>
-            <p className="text-blue-400 font-medium">
-              {subtitle}
-            </p>
-          </div>
+    <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-blue-400/30 transition-all duration-300 mb-8">
+      {/* 圖示和標題 */}
+      <div className="flex items-center gap-4 mb-6">
+        <div className="w-12 h-12 flex items-center justify-center rounded-full bg-blue-500/20 text-blue-400">
+          {icon}
         </div>
-        
-        {/* 描述 */}
-        <p className="text-lg text-gray-300 leading-relaxed">
-          {description}
-        </p>
+        <div>
+          <h3 className="text-2xl md:text-3xl font-bold text-white">
+            {title}
+          </h3>
+          <p className="text-blue-400 font-medium">
+            {subtitle}
+          </p>
+        </div>
       </div>
       
-      {/* 視覺化展示區域 */}
-      <div className="flex-1">
-        <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-blue-400/30 transition-all duration-300">
-          <div className="bg-gray-800 rounded-xl p-6 text-center">
-            <p className="text-gray-400 text-sm mb-4">{imagePlaceholder}</p>
-            <div className="w-full h-48 bg-gradient-to-br from-gray-700 to-gray-800 rounded-lg flex items-center justify-center">
-              <span className="text-gray-500 text-sm">功能展示區域</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* 描述 */}
+      <p className="text-lg text-gray-300 leading-relaxed">
+        {description}
+      </p>
     </div>
   );
 };
@@ -86,9 +65,7 @@ export default function SolutionSection() {
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
           <path d="M20 15.5c-1.25 0-2.45-.2-3.57-.57-.35-.11-.74-.03-1.02.24l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.59l2.2-2.2c.27-.27.35-.67.24-1.02C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1zM12 3v10l3-3h6V3h-9z"/>
         </svg>
-      ),
-      imagePlaceholder: "iOS 來電介面動畫展示",
-      reversed: false
+      )
     },
     {
       title: "智慧排程，從容應對",
@@ -99,9 +76,7 @@ export default function SolutionSection() {
           <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
           <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"/>
         </svg>
-      ),
-      imagePlaceholder: "App 時間排程介面截圖",
-      reversed: true
+      )
     },
     {
       title: "隱私至上，安全無虞",
@@ -111,9 +86,7 @@ export default function SolutionSection() {
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
           <path d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,7C13.4,7 14.8,8.6 14.8,10V11H16V16H8V11H9.2V10C9.2,8.6 10.6,7 12,7M12,8.2C11.2,8.2 10.4,8.8 10.4,10V11H13.6V10C13.6,8.8 12.8,8.2 12,8.2Z"/>
         </svg>
-      ),
-      imagePlaceholder: "隱私保護功能說明圖",
-      reversed: false
+      )
     }
   ];
 
@@ -123,8 +96,8 @@ export default function SolutionSection() {
         {/* 區塊標題 */}
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            完美解決方案，
-            <span className="block text-blue-400">就在你的口袋裡</span>
+            核心功能
+            <span className="block text-blue-400 mt-2">三大特色</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             「守護鈴」結合先進技術與人性化設計，為你提供最自然、最可信的脫身方案
@@ -132,7 +105,7 @@ export default function SolutionSection() {
         </div>
 
         {/* 功能特色列表 */}
-        <div className="space-y-0">
+        <div className="grid gap-6 md:grid-cols-1 lg:grid-cols-1">
           {features.map((feature, index) => (
             <FeatureItem
               key={index}
