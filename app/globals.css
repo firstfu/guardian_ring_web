@@ -1,26 +1,67 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Guardian Ring 品牌色彩系統 */
+  --guardian-primary-blue: #1C2A39;
+  --guardian-primary-dark: #1E1E1E;
+  --guardian-accent-blue: #0A84FF;
+  --guardian-accent-green: #30D158;
+  --guardian-text-light: #ffffff;
+  --guardian-text-gray: #9CA3AF;
+  
+  /* 背景與前景色 */
+  --background: var(--guardian-primary-dark);
+  --foreground: var(--guardian-text-light);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  
+  /* 字體系統 - 優先使用繁體中文字體 */
+  --font-sans: var(--font-noto-sans-tc), var(--font-geist-sans), "PingFang TC", "Apple LiGothic Medium", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   --font-mono: var(--font-geist-mono);
+  
+  /* Guardian Ring 自定義色彩 */
+  --color-guardian-primary: var(--guardian-primary-blue);
+  --color-guardian-dark: var(--guardian-primary-dark);
+  --color-guardian-accent: var(--guardian-accent-blue);
+  --color-guardian-success: var(--guardian-accent-green);
+  --color-guardian-text: var(--guardian-text-light);
+  --color-guardian-muted: var(--guardian-text-gray);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: var(--guardian-primary-dark);
+    --foreground: var(--guardian-text-light);
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-noto-sans-tc), var(--font-geist-sans), "PingFang TC", "Apple LiGothic Medium", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+  line-height: 1.6;
+  font-feature-settings: "kern" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 自定義滾動條 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--guardian-primary-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--guardian-accent-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0066CC;
 }
