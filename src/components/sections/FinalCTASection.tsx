@@ -56,8 +56,7 @@ const DownloadButton: React.FC<{
 export default function FinalCTASection() {
   // 處理下載按鈕點擊
   const handleAppStoreClick = () => {
-    // 這裡之後可以加入實際的 App Store 連結
-    console.log('App Store download clicked');
+    window.open('https://apps.apple.com/us/app/%E5%AE%88%E8%AD%B7%E9%88%B4-%E7%B7%8A%E6%80%A5%E8%84%AB%E8%BA%AB%E6%95%91%E6%8F%B4%E7%A5%9E%E5%99%A8/id6751815031', '_blank');
   };
 
   const handleGooglePlayClick = () => {
