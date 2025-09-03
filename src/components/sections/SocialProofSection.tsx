@@ -199,7 +199,7 @@ export default function SocialProofSection() {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             超過 <span className="text-blue-400">10,000+</span> 用戶的
-            <span className="block">信賴選擇</span>
+            <span className="block mt-2">信賴選擇</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             真實用戶分享他們的成功脫身經驗，看看「守護鈴」如何改變他們的社交生活

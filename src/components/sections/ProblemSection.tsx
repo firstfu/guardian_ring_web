@@ -85,7 +85,7 @@ export default function ProblemSection() {
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
             你是否也想從這些時刻
-            <span className="block text-red-400">「被拯救」？</span>
+            <span className="block text-red-400 mt-2">「被拯救」？</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             生活中總有些時刻，我們需要一個完美的藉口來脫身。這些情境你一定不陌生...
