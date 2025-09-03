@@ -60,8 +60,7 @@ export default function FinalCTASection() {
   };
 
   const handleGooglePlayClick = () => {
-    // 這裡之後可以加入實際的 Google Play 連結
-    console.log('Google Play download clicked');
+    alert('Android 版本正在開發中，敬請期待！\n請先下載 iOS 版本體驗完整功能。');
   };
 
   return (
