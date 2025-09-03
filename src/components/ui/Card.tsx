@@ -7,6 +7,7 @@
  */
 
 import React from 'react';
+import Image from 'next/image';
 
 // 問題卡片介面
 export interface ProblemCardProps {
@@ -55,12 +56,14 @@ export const TestimonialCard: React.FC<TestimonialCardProps> = ({
 }) => {
   return (
     <div className={`bg-white rounded-lg shadow-md p-6 border border-gray-200 ${className}`}>
-      <p className="text-gray-600 mb-4 italic">"{content}"</p>
+      <p className="text-gray-600 mb-4 italic">&ldquo;{content}&rdquo;</p>
       <div className="flex items-center">
         {avatar && (
-          <img 
+          <Image 
             src={avatar} 
             alt={name} 
+            width={40}
+            height={40}
             className="w-10 h-10 rounded-full mr-3"
           />
         )}

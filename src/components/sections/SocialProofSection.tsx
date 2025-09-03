@@ -54,7 +54,7 @@ const TestimonialCard: React.FC<TestimonialProps> = ({
       
       {/* 評價內容 */}
       <blockquote className="text-white text-lg leading-relaxed mb-4">
-        "{comment}"
+        &ldquo;{comment}&rdquo;
       </blockquote>
       
       {/* 使用情境標籤 */}

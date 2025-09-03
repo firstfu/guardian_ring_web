@@ -62,7 +62,7 @@ export interface HeadingProps {
 
 // 一般標題元件
 export const Heading: React.FC<HeadingProps> = ({ children, level = 2, className = "" }) => {
-  const Tag = `h${level}` as keyof JSX.IntrinsicElements;
+  const Tag = `h${level}` as keyof React.JSX.IntrinsicElements;
   
   const sizeClasses = {
     1: 'text-4xl md:text-5xl',
